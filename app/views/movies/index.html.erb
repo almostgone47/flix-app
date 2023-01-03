@@ -1,0 +1,18 @@
+<% @movies.each do |movie| %>
+  <section class="movie">
+    <div class="summary">
+      <h2>
+        <%= movie.title %>
+      </h2>
+      <h3>
+        <%= convert_to_currency(movie) %>
+      </h3>
+      <p>
+        <%= truncate(movie.description, length: 150, separator: ' ') %>
+      </p>
+        <p>
+            Release Date: <%= show_year_released(movie) %>
+        </p>
+    </div>
+  </section>
+<% end %>
