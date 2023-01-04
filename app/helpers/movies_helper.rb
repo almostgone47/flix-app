@@ -1,14 +1,14 @@
 module MoviesHelper
 
-    def convert_to_currency(movie)
+    def total_gross(movie)
         if movie.movie_flop?
             "Flop"
        else
             number_to_currency(movie.total_gross)
        end
     end
-
-    def show_year_released(movie)
+    
+    def year_of(movie)
         if movie.released_on.blank?
             "Unknown"
         else

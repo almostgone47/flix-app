@@ -2,17 +2,21 @@
   <section class="movie">
     <div class="summary">
       <h2>
-        <%= movie.title %>
+        <%= link_to movie.title, movie_path(movie) %>
       </h2>
       <h3>
-        <%= convert_to_currency(movie) %>
+        <%= total_gross(movie) %>
       </h3>
       <p>
         <%= truncate(movie.description, length: 150, separator: ' ') %>
       </p>
         <p>
-            Release Date: <%= show_year_released(movie) %>
+            Release Date: <%= year_of(movie) %>
         </p>
     </div>
   </section>
 <% end %>
+
+<section class="admin">
+  <%= link_to "Add Movie", new_movie_path, {class: "button"} %>
+</section>
